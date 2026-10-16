@@ -1,0 +1,81 @@
+/* ==========================================================================
+   DESIGN TOKENS — Pure Sunfarms × Eat Xenia Editorial System
+   Strictly 2 Font Families (Fraunces Humanist Serif + Rubik Sans)
+   Generous 8px Spatial Scale & 60-30-10 Botanical Palette
+   ========================================================================== */
+
+:root {
+  /* 60% Primary Canvas & Warm Botanical Neutrals (Zero Pure #FFFFFF) */
+  --bg-cream: #F4F1EA;
+  --bg-cream-elevated: #FAF7F0;
+  --bg-sand: #E8E2D5;
+  --bg-sage-tint: #DCE3D8;
+
+  /* 30% Deep Forest, Terracotta & Botanical Surfaces */
+  --bg-forest: #173D32;
+  --bg-forest-deep: #0F2922;
+  --bg-forest-mid: #1F4E40;
+  --bg-hazel: #546650;
+  --bg-terracotta: #6E3B2B;
+
+  /* Typography Colors */
+  --text-primary: #173D32;
+  --text-secondary: #354F46;
+  --text-muted: #586D63;
+  --text-on-dark: #F4F1EA;
+  --text-on-dark-muted: #CBD5C8;
+
+  /* 10% Intentional Interactive Accents */
+  --accent-neon: #ADF76D;
+  --accent-neon-hover: #C4FF8F;
+  --accent-yellow: #FCB900;
+  --accent-yellow-hover: #FFD043;
+  --accent-ochre: #D97724;
+
+  /* Structural Hairlines & Borders */
+  --border-forest: #173D32;
+  --border-subtle: rgba(23, 61, 50, 0.16);
+  --border-on-dark: rgba(244, 241, 234, 0.2);
+
+  /* Font Families — Eat Xenia Pairing (Calluna/Fraunces Serif + Rubik Sans) */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Rubik', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Rubik', sans-serif;
+
+  /* Fluid Type Scale (clamp() — Modern Design Standard Part 5 + Eat Xenia Scale) */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.95rem);
+  --text-base: clamp(1.02rem, 0.98rem + 0.22vw, 1.15rem);
+  --text-lg: clamp(1.1875rem, 1.1rem + 0.45vw, 1.4rem);
+  --text-xl: clamp(1.4rem, 1.22rem + 0.85vw, 1.85rem);
+  --text-2xl: clamp(1.85rem, 1.5rem + 1.6vw, 2.65rem);
+  --text-3xl: clamp(2.35rem, 1.85rem + 2.4vw, 3.75rem);
+  --text-hero: clamp(2.85rem, 2.1rem + 3.5vw, 4.85rem);
+
+  /* Strict 8px Spatial Scale with Generous Editorial Breathing Room */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+  --space-40: 10rem;    /* 160px */
+
+  /* Layout Constraints */
+  --container-max: 1280px;
+  --container-pad: clamp(1.5rem, 5vw, 4rem);
+  --header-height: 76px;
+
+  /* Motion & Easing */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 180ms;
+  --duration-base: 320ms;
+  --duration-slow: 600ms;
+}

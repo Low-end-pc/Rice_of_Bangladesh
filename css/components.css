@@ -1,0 +1,385 @@
+/* ==========================================================================
+   COMPONENTS — Pure Sunfarms Gapless 3-Col Flip Cards × Eat Xenia Typography
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CATALOGUE FILTER BAR & SEARCH
+   -------------------------------------------------------------------------- */
+.catalogue-section {
+  background-color: var(--bg-cream);
+  border-bottom: 1.5px solid var(--border-forest);
+}
+
+.catalogue-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+
+.catalogue-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding-block: var(--space-8);
+  border-top: 1.5px solid var(--border-forest);
+  border-bottom: 1.5px solid var(--border-forest);
+  margin-bottom: var(--space-16);
+}
+
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.filter-tab {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.65rem 1.15rem;
+  border: 1.5px solid var(--border-forest);
+  background-color: transparent;
+  color: var(--text-primary);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.filter-tab:hover {
+  background-color: var(--bg-sand);
+}
+
+.filter-tab.is-active {
+  background-color: var(--bg-forest);
+  color: var(--accent-neon);
+  font-weight: 600;
+}
+
+.search-box {
+  position: relative;
+  min-width: 280px;
+  flex: 0 1 340px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1.1rem;
+  border: 1.5px solid var(--border-forest);
+  background-color: var(--bg-cream-elevated);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.search-input:focus {
+  background-color: var(--accent-neon);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   2. GAPLESS 3-COLUMN PRODUCT / DISH FLIP GRID
+   -------------------------------------------------------------------------- */
+.products-grid-gapless {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1.5px solid var(--border-forest);
+  border-left: 1.5px solid var(--border-forest);
+}
+
+.dish-card {
+  position: relative;
+  height: 575px;
+  border-right: 1.5px solid var(--border-forest);
+  border-bottom: 1.5px solid var(--border-forest);
+  background-color: var(--bg-cream);
+  perspective: 1400px;
+}
+
+.dish-card-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s var(--ease-out);
+}
+
+.dish-card.is-flipped .dish-card-flip {
+  transform: rotateY(180deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dish-card:hover .dish-card-flip {
+    transform: rotateY(180deg);
+  }
+}
+
+.dish-card-front,
+.dish-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* FRONT FACE */
+.dish-card-front {
+  background-color: var(--bg-cream);
+}
+
+.dish-artwork {
+  position: relative;
+  width: 100%;
+  height: 335px;
+  overflow: hidden;
+  background-color: var(--bg-forest-deep);
+  border-bottom: 1.5px solid var(--border-forest);
+}
+
+.dish-artwork img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.75s var(--ease-out);
+}
+
+.dish-card:hover .dish-artwork img {
+  transform: scale(1.06);
+}
+
+.dish-badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--accent-neon);
+  color: var(--bg-forest);
+  border: 1px solid var(--border-forest);
+}
+
+.dish-front-header {
+  padding: var(--space-8);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dish-format-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+
+.dish-card-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin-top: var(--space-2);
+}
+
+.dish-card-bengali {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.dish-front-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+  margin-top: var(--space-4);
+}
+
+.region-pill {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border-forest);
+  background-color: var(--bg-sand);
+  color: var(--text-primary);
+}
+
+.region-pill.region-dhaka { background-color: #F5D08A; }
+.region-pill.region-sylhet { background-color: #B8E6C9; }
+.region-pill.region-chittagong { background-color: #F4B6A4; }
+.region-pill.region-hills { background-color: #D4C5F9; }
+.region-pill.region-north { background-color: #F7E396; }
+.region-pill.region-khulna { background-color: #F9C784; }
+.region-pill.region-barishal { background-color: #AEE1E1; }
+.region-pill.region-mymensingh { background-color: #DCE79C; }
+
+.grain-spec {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-primary);
+}
+
+.grain-spec b {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 4px;
+}
+
+/* BACK FACE */
+.dish-card-back {
+  background-color: var(--bg-cream-elevated);
+  transform: rotateY(180deg);
+}
+
+.dish-back-top {
+  padding: var(--space-6) var(--space-8) var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.dish-close-btn {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.dish-back-middle {
+  padding: var(--space-6) var(--space-8);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.back-field-label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.back-field-value {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* 3-Column Circular SVG Aroma Icons */
+.aroma-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.aroma-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+.aroma-svg-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--border-forest);
+  background-color: var(--bg-cream);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.aroma-icon-item:hover .aroma-svg-circle {
+  transform: scale(1.08);
+}
+
+.aroma-icon-label {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+}
+
+/* Bottom 2-Col Gapless Buttons on Card Back */
+.dish-back-bottom {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  border-top: 1.5px solid var(--border-forest);
+}
+
+.dish-back-bottom .button {
+  border: none;
+  min-height: 52px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
+.dish-back-bottom .button:first-child {
+  border-right: 1.5px solid var(--border-forest);
+}
+
+@media (max-width: 1024px) {
+  .products-grid-gapless {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .products-grid-gapless {
+    grid-template-columns: 1fr;
+  }
+}

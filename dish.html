@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dish Monograph — Bengal Rice Archive</title>
+  <meta name="description" content="Detailed culinary monograph, heirloom grain anatomy, lineage, and botanical aroma profile.">
+
+  <!-- Google Fonts: Strictly 2 Font Families (Fraunces Humanist Serif + Rubik Sans — Eat Xenia Pairing) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/dish-page.css">
+</head>
+<body>
+
+  <!-- Shared Header & Expandable Mega-Drawers (Mounted via js/components/navbar.js) -->
+  <div id="site-navbar-mount"></div>
+
+  <main aria-label="Dish Monograph">
+
+    <!-- ======================================================================
+         1. HORIZONTAL 28-DISH DIRECTORY SUB-MENU
+         ====================================================================== -->
+    <header class="dish-submenu" aria-label="Quick Dish Switcher">
+      <div class="container">
+        <div class="dish-submenu-header">
+          <span>Complete 28-Dish Monograph Index</span>
+          <span>Click any dish to switch</span>
+        </div>
+        <div id="dish-submenu-mount" class="dish-submenu-list"></div>
+      </div>
+    </header>
+
+    <!-- ======================================================================
+         2. UN-CROWDED SINGLE DISH HERO SPLIT
+            (Generous breathing room for Dish Title, Bengali Script & Lead Story)
+         ====================================================================== -->
+    <article id="single-dish-mount" class="single-dish-article"></article>
+
+    <!-- ======================================================================
+         3. EAT XENIA CENTERPIECE EDITORIAL QUOTE BAND
+            (Spacious 96px-136px vertical padding around the dish's soul quote)
+         ====================================================================== -->
+    <section id="dish-quote-mount" class="xenia-statement-band" aria-label="Editorial Statement"></section>
+
+    <!-- ======================================================================
+         4. SPACIOUS ARCHITECTURAL MONOGRAPH LEDGER
+            (Left: 3 Circular Botanical SVG Aromas | Right: Wide-Breathing Spec Rows)
+         ====================================================================== -->
+    <section id="dish-ledger-mount" class="monograph-ledger-section" aria-label="Dish Specifications"></section>
+
+    <!-- ======================================================================
+         5. ASYMMETRIC CULINARY STUDY BAND (Grain Anatomy & Hearth Physics)
+         ====================================================================== -->
+    <section id="anatomy" class="culinary-study-band">
+      <div id="culinary-study-mount"></div>
+    </section>
+
+    <!-- ======================================================================
+         6. RELATED DISHES FROM THIS TERROIR
+         ====================================================================== -->
+    <section class="catalogue-section section-pad">
+      <div class="container">
+        <div class="catalogue-header">
+          <div>
+            <div class="h5" style="color: var(--text-muted); margin-bottom: 8px;">Regional Companions</div>
+            <h2 id="related-terroir-heading">More From This Terroir</h2>
+          </div>
+          <a href="./index.html#bangladesh-map" class="button">
+            <span>Explore Interactive Bangladesh Map</span>
+          </a>
+        </div>
+
+        <div id="related-dishes-grid" class="products-grid-gapless"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. PURE SUNFARMS PREV / ALL 28 / NEXT PAGINATION BAR
+         ====================================================================== -->
+    <section id="dish-pagination-mount" class="dish-pagination" aria-label="Dish Pagination"></section>
+
+  </main>
+
+  <!-- ========================================================================
+       8. EDITORIAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="h4" style="color: var(--accent-neon); margin-bottom: 1rem;">Bengal Rice Archive</div>
+          <p style="font-size: var(--text-sm); font-weight: 300; color: var(--text-on-dark-muted); max-width: 44ch;">
+            An open cartographic and culinary monograph documenting the indigenous rice cultivars, cauldron physics, and regional feasts of Bangladesh.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Eight Regional Terroirs</div>
+          <ul class="footer-links">
+            <li><a href="./index.html?region=Old%20Dhaka#bangladesh-map">Old Dhaka &amp; Buriganga Basin</a></li>
+            <li><a href="./index.html?region=Sylhet#bangladesh-map">Sylhet &amp; Surma-Haor Valley</a></li>
+            <li><a href="./index.html?region=Chittagong#bangladesh-map">Chittagong &amp; Coastal Mezban</a></li>
+            <li><a href="./index.html?region=Hill%20Tracts#bangladesh-map">Chittagong Hill Tracts Jhum</a></li>
+            <li><a href="./index.html?region=North%20Bengal#bangladesh-map">Rajshahi, Varendra &amp; Teesta North</a></li>
+            <li><a href="./index.html?region=Khulna#bangladesh-map">Khulna &amp; Sundarbans Mangrove</a></li>
+            <li><a href="./index.html?region=Barishal#bangladesh-map">Barishal &amp; Southern River Delta</a></li>
+            <li><a href="./index.html?region=Mymensingh#bangladesh-map">Mymensingh, Garo Hills &amp; Titas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Featured Monographs</div>
+          <ul class="footer-links">
+            <li><a href="./dish.html?id=1">Old Dhaka Beef Tehari</a></li>
+            <li><a href="./dish.html?id=2">Haji Biryani in Jackfruit Leaf (1939)</a></li>
+            <li><a href="./dish.html?id=8">Smoked Bamboo Chunga Pitha</a></li>
+            <li><a href="./dish.html?id=21">Khulna Chui Jhal Mutton Polao</a></li>
+            <li><a href="./dish.html?id=23">Barishal Bishkhali Ilish Polao</a></li>
+            <li><a href="./dish.html?id=25">Sherpur GI Tulshimala Polao</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Bengal Rice Archive. Culinary &amp; Botanical Monograph.</div>
+        <div>28 Verified Authentic Photographs • 8 Interactive Terroirs</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modular Scripts -->
+  <script src="./js/data/dishes.js" defer></script>
+  <script src="./js/data/regions.js" defer></script>
+  <script src="./js/components/icons.js" defer></script>
+  <script src="./js/components/navbar.js" defer></script>
+  <script src="./js/components/flip-card.js" defer></script>
+  <script src="./js/dish-detail.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bengal Rice Archive — Interactive Terroir Atlas &amp; 28 Rice Monographs</title>
+  <meta name="description" content="An interactive cartographic and culinary monograph of 28 authentic Bangladeshi rice dishes across all 8 regional terroirs.">
+
+  <!-- Google Fonts: Strictly 2 Font Families (Fraunces Humanist Serif + Rubik Sans — Eat Xenia Pairing) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/map.css">
+  <link rel="stylesheet" href="./css/components.css">
+</head>
+<body>
+
+  <!-- Shared Header & Expandable Mega-Drawers (Mounted via js/components/navbar.js) -->
+  <div id="site-navbar-mount"></div>
+
+  <main aria-label="Main content">
+
+    <!-- ======================================================================
+         1. ASYMMETRIC EDITORIAL HERO COVER
+         ====================================================================== -->
+    <section class="hero-section">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="reveal is-visible">
+            <div class="hero-eyebrow">Indigenous Grain &amp; Terroir Monograph</div>
+            <h1 class="hero-headline">
+              What goes in the degh <span class="highlight">is what matters.</span>
+            </h1>
+            <p class="hero-lead">
+              From the stitched jackfruit-leaf baskets of 1939 Old Dhaka and Khulna's Chui Jhal mutton cauldrons to purple Binni rice steamed inside mountain bamboo in Bandarban—an interactive chronicle of Bangladesh's twenty-eight defining rice dishes.
+            </p>
+            <div class="hero-actions">
+              <a href="#bangladesh-map" class="button neon">
+                <span>Explore Bangladesh Map</span>
+                <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M11 5l5 5-5 5"/></svg>
+              </a>
+              <a href="#catalogue" class="button outline-light">
+                <span>Browse All 28 Dishes</span>
+                <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M11 5l5 5-5 5"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-ledger reveal is-visible reveal-delay-1">
+            <div>
+              <div class="ledger-val">28</div>
+              <div class="ledger-label">Documented Dishes</div>
+            </div>
+            <div>
+              <div class="ledger-val">08</div>
+              <div class="ledger-label">Mapped Terroirs</div>
+            </div>
+            <div>
+              <div class="ledger-val">08</div>
+              <div class="ledger-label">Heirloom Cultivars</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-visual-img-wrap">
+            <img src="./images/dish_2.jpg"
+                 alt="Haji Biryani (1939) served in stitched dried jackfruit-leaf bowl"
+                 class="hero-visual-img"
+                 fetchpriority="high" />
+          </div>
+          <div class="hero-caption-bar">
+            <div>
+              <div class="h5" style="color: var(--accent-neon);">Featured Monograph • Est. 1939</div>
+              <div style="font-family: var(--font-display); font-size: 1.35rem; margin-top: 4px;">Haji Biryani in Jackfruit Leaf</div>
+            </div>
+            <a href="./dish.html?id=2" class="button yellow">
+              <span>Dig In</span>
+              <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M11 5l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. EAT XENIA EDITORIAL STATEMENT BAND (Generous Breathing Room)
+         ====================================================================== -->
+    <section class="xenia-statement-band">
+      <div class="xenia-statement-inner reveal">
+        <p class="xenia-statement-quote">
+          Across the river deltas, mangrove estuaries, haor wetlands, and forested hill tracts of Bangladesh, rice is never a mere side dish—it is an <em>architectural medium</em> shaped by local soil, water, and vessel.
+        </p>
+        <div class="xenia-statement-source">
+          The Bengal Rice Archive • Eight Culinary Landscapes
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. INTERACTIVE CULINARY MAP OF BANGLADESH (All 8 Divisions / Terroirs)
+         ====================================================================== -->
+    <section id="bangladesh-map" class="map-atlas-section">
+      <div class="container">
+        <div class="map-atlas-header reveal">
+          <div>
+            <div class="h5" style="color: var(--accent-neon);">Interactive Cartographic Discovery</div>
+            <h2 class="map-atlas-title">Explore Dishes by Bangladesh Terroir</h2>
+          </div>
+          <p class="map-atlas-sub">
+            Click any of Bangladesh's eight culinary regions on the map or selector bar below to inspect its indigenous rice cultivars, cooking fat medium, and regional dish monographs.
+          </p>
+        </div>
+
+        <!-- Mounted via js/components/bangladesh-map.js -->
+        <div id="bangladesh-map-mount" class="reveal"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. FULL-BLEED EDITORIAL SPLIT BLOCKS
+            (.layout-image-left & .layout-image-right)
+         ====================================================================== -->
+
+    <!-- Split Block A: Image Left (Old Dhaka Beef Tehari on Warm Cream Canvas) -->
+    <section class="split-block theme-cream">
+      <div class="split-grid layout-image-left">
+        <div class="split-media">
+          <img src="./images/dish_1.jpg" alt="Old Dhaka Beef Tehari with Chinigura rice and green chilies" loading="lazy" />
+        </div>
+        <div class="split-content">
+          <div class="split-content-inner reveal">
+            <span class="split-tag">Old Dhaka Cauldron</span>
+            <h2 class="split-title">Mustard-Oil Beef Tehari</h2>
+            <div class="split-bengali bengali-title">পুরান ঢাকার সরিষার তেলের বিফ তেহারি</div>
+            <p class="split-desc">
+              Born in the 1930s mahallas of Old Dhaka, authentic Tehari rejects clarified butter for the sharp bite of cold-pressed mustard oil. Small-grain Chinigura rice simmers directly inside the spiced beef brisket gravy with whole green chilies.
+            </p>
+            <div class="split-meta-table">
+              <div>
+                <div class="split-meta-label">Grain Cultivar</div>
+                <div class="split-meta-val">Aged Dinajpur Chinigura</div>
+              </div>
+              <div>
+                <div class="split-meta-label">Fat &amp; Vessel</div>
+                <div class="split-meta-val">Mustard Oil • Brass Degh</div>
+              </div>
+            </div>
+            <a href="./dish.html?id=1" class="button neon">
+              <span>Dig In</span>
+              <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M11 5l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Split Block B: Image Right (Khulna Chui Jhal Mutton Polao on Deep Forest Canvas) -->
+    <section class="split-block theme-forest">
+      <div class="split-grid layout-image-right">
+        <div class="split-media">
+          <img src="./images/dish_21.jpg" alt="Khulna Chui Jhal Mutton Polao with Chinigura rice" loading="lazy" />
+        </div>
+        <div class="split-content">
+          <div class="split-content-inner reveal">
+            <span class="split-tag">South-West Mangrove Terroir</span>
+            <h2 class="split-title">Khulna Chui Jhal Mutton Polao</h2>
+            <div class="split-bengali bengali-title">খুলনার ঐতিহ্যবাহী চুইঝালের খাসির মাংস ও পোলাও</div>
+            <p class="split-desc">
+              Across Khulna, Satkhira, and Bagerhat, the woody stems of the Piper chaba vine (Chui Jhal) are peeled into batons and slow-braised with mutton and whole garlic bulbs, infusing fragrant Chinigura polao with a warm, medicinal peppercorn heat.
+            </p>
+            <div class="split-meta-table">
+              <div>
+                <div class="split-meta-label">Botanical Spice</div>
+                <div class="split-meta-val">Piper chaba (Chui Jhal) Vine</div>
+              </div>
+              <div>
+                <div class="split-meta-label">Grain Cultivar</div>
+                <div class="split-meta-val">Aged Chinigura &amp; Balam</div>
+              </div>
+            </div>
+            <a href="./dish.html?id=21" class="button yellow">
+              <span>Explore Monograph</span>
+              <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M11 5l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Split Block C: Image Left (Barishal Bishkhali Ilish Polao on Hazel Botanical Canvas) -->
+    <section class="split-block theme-hazel">
+      <div class="split-grid layout-image-left">
+        <div class="split-media">
+          <img src="./images/dish_23.jpg" alt="Barishal Bishkhali Ilish Polao with caramelized onion beresta" loading="lazy" />
+        </div>
+        <div class="split-content">
+          <div class="split-content-inner reveal">
+            <span class="split-tag">Southern River Estuary</span>
+            <h2 class="split-title">Barishal Bishkhali Ilish Polao</h2>
+            <div class="split-bengali bengali-title">বরিশালের ঐতিহ্যবাহী ইলিশ পোলাও</div>
+            <p class="split-desc">
+              Where the Kirtankhola and Bishkhali rivers meet the southern delta, silver Hilsa steaks are poached in freshly pressed coconut milk and onion paste, then nestled beneath Kalijira polao and golden beresta for final steaming.
+            </p>
+            <div class="split-meta-table">
+              <div>
+                <div class="split-meta-label">River Catch</div>
+                <div class="split-meta-val">Bishkhali &amp; Meghna Hilsa</div>
+              </div>
+              <div>
+                <div class="split-meta-label">Cooking Emulsion</div>
+                <div class="split-meta-val">Pressed Coconut Milk &amp; Curd</div>
+              </div>
+            </div>
+            <a href="./dish.html?id=23" class="button yellow">
+              <span>Read Delta Study</span>
+              <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M11 5l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. THE 28 DISHES — GAPLESS 3-COLUMN FLIP CATALOGUE
+         ====================================================================== -->
+    <section id="catalogue" class="catalogue-section section-pad">
+      <div class="container">
+        <div class="catalogue-header reveal">
+          <div>
+            <div class="h5" style="color: var(--text-muted); margin-bottom: 8px;">Complete Regional Index</div>
+            <h2>The 28 Rice Monographs</h2>
+            <p style="color: var(--text-secondary); margin-top: 0.75rem; font-weight: 300;">
+              Hover or tap any dish card to flip and inspect its flavor compounds, lineage, and botanical aroma icons—or click <strong>More Info</strong> for the full Dish Display Page.
+            </p>
+          </div>
+          <div class="mono" id="catalogue-count" style="font-weight: 600;">
+            SHOWING 28 OF 28 MONOGRAPHS
+          </div>
+        </div>
+
+        <!-- Filter Bar (All 8 Terroirs) & Search -->
+        <div class="catalogue-controls reveal">
+          <div class="filter-tabs" role="tablist" aria-label="Filter dishes by region">
+            <button type="button" class="filter-tab is-active" data-region="all">All 8 Terroirs</button>
+            <button type="button" class="filter-tab" data-region="Old Dhaka">Old Dhaka</button>
+            <button type="button" class="filter-tab" data-region="Sylhet">Sylhet</button>
+            <button type="button" class="filter-tab" data-region="Chittagong">Chittagong</button>
+            <button type="button" class="filter-tab" data-region="Hill Tracts">Hill Tracts</button>
+            <button type="button" class="filter-tab" data-region="North Bengal">North Bengal</button>
+            <button type="button" class="filter-tab" data-region="Khulna">Khulna</button>
+            <button type="button" class="filter-tab" data-region="Barishal">Barishal</button>
+            <button type="button" class="filter-tab" data-region="Mymensingh">Mymensingh &amp; Titas</button>
+          </div>
+
+          <div class="search-box">
+            <input type="search"
+                   id="catalogue-search"
+                   class="search-input"
+                   placeholder="Search dish, grain, or spice..."
+                   aria-label="Search dishes" />
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/>
+              <path d="M20 20l-3.5-3.5"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Gapless 3-Col Flip Grid (Mounted via js/home.js) -->
+        <div id="products-grid" class="products-grid-gapless"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. HEIRLOOM GRAIN BOTANICAL LEDGER (Sticky Intro + 8 Cultivar Rows)
+         ====================================================================== -->
+    <section id="grains" class="grains-section section-pad">
+      <div class="container">
+        <div class="grains-layout">
+          <div class="grains-sticky-intro reveal">
+            <div class="h5" style="color: var(--text-muted); margin-bottom: 10px;">Botanical Seed Index</div>
+            <h2>Living Heirloom Grains</h2>
+            <p style="color: var(--text-secondary); margin-top: 1.25rem; font-weight: 300;">
+              Every Bangladeshi rice dish is governed by the starch architecture of its grain. From Dinajpur's Kalijira and Sherpur's GI-certified Tulshimala to Barishal's slender Balam and Sylhet's glutinous Biroin, each landrace evolved for a distinct pot and fire.
+            </p>
+            <div style="margin-top: 2.5rem;">
+              <a href="./dish.html?id=25" class="button">
+                <span>Inspect GI Tulshimala Polao</span>
+                <svg class="arrow-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12"/><path d="M11 5l5 5-5 5"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Ledger Rows (Mounted via js/home.js) -->
+          <div id="grains-ledger-mount" class="grain-ledger-list"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       7. EDITORIAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="h4" style="color: var(--accent-neon); margin-bottom: 1rem;">Bengal Rice Archive</div>
+          <p style="font-size: var(--text-sm); font-weight: 300; color: var(--text-on-dark-muted); max-width: 44ch;">
+            An open cartographic and culinary monograph documenting the indigenous rice cultivars, cauldron physics, and regional feasts of Bangladesh.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Eight Regional Terroirs</div>
+          <ul class="footer-links">
+            <li><a href="./index.html?region=Old%20Dhaka#bangladesh-map">Old Dhaka &amp; Buriganga Basin</a></li>
+            <li><a href="./index.html?region=Sylhet#bangladesh-map">Sylhet &amp; Surma-Haor Valley</a></li>
+            <li><a href="./index.html?region=Chittagong#bangladesh-map">Chittagong &amp; Coastal Mezban</a></li>
+            <li><a href="./index.html?region=Hill%20Tracts#bangladesh-map">Chittagong Hill Tracts Jhum</a></li>
+            <li><a href="./index.html?region=North%20Bengal#bangladesh-map">Rajshahi, Varendra &amp; Teesta North</a></li>
+            <li><a href="./index.html?region=Khulna#bangladesh-map">Khulna &amp; Sundarbans Mangrove</a></li>
+            <li><a href="./index.html?region=Barishal#bangladesh-map">Barishal &amp; Southern River Delta</a></li>
+            <li><a href="./index.html?region=Mymensingh#bangladesh-map">Mymensingh, Garo Hills &amp; Titas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Featured Monographs</div>
+          <ul class="footer-links">
+            <li><a href="./dish.html?id=1">Old Dhaka Beef Tehari</a></li>
+            <li><a href="./dish.html?id=2">Haji Biryani in Jackfruit Leaf (1939)</a></li>
+            <li><a href="./dish.html?id=8">Smoked Bamboo Chunga Pitha</a></li>
+            <li><a href="./dish.html?id=21">Khulna Chui Jhal Mutton Polao</a></li>
+            <li><a href="./dish.html?id=23">Barishal Bishkhali Ilish Polao</a></li>
+            <li><a href="./dish.html?id=25">Sherpur GI Tulshimala Polao</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Bengal Rice Archive. Culinary &amp; Botanical Monograph.</div>
+        <div>28 Verified Authentic Photographs • 8 Interactive Terroirs</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modular Scripts -->
+  <script src="./js/data/dishes.js" defer></script>
+  <script src="./js/data/regions.js" defer></script>
+  <script src="./js/data/grains.js" defer></script>
+  <script src="./js/components/icons.js" defer></script>
+  <script src="./js/components/navbar.js" defer></script>
+  <script src="./js/components/flip-card.js" defer></script>
+  <script src="./js/components/bangladesh-map.js" defer></script>
+  <script src="./js/home.js" defer></script>
+</body>
+</html>
