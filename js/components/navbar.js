@@ -25,7 +25,7 @@ window.BengalArchive.Navbar = {
     const terroirCardsHtml = regions.map(r => {
       const count = dishes.filter(d => d.region.toLowerCase() === r.id.toLowerCase()).length;
       return `
-        <a href="./index.html?region=${encodeURIComponent(r.id)}#catalogue" class="mega-terroir-card">
+        <a href="./?region=${encodeURIComponent(r.id)}#catalogue" class="mega-terroir-card">
           <div>
             <div class="h5" style="color: var(--accent-neon); margin-bottom: 8px;">${count} Monographs</div>
             <div class="h4" style="color: var(--text-on-dark); margin-bottom: 10px;">${r.shortLabel}</div>
@@ -51,11 +51,11 @@ window.BengalArchive.Navbar = {
               <span>8 Terroirs</span>
               <span class="plus-icon">+</span>
             </button>
-            <a href="./index.html#bangladesh-map" class="nav-link hide-mobile">Interactive Map</a>
+            <a href="./#bangladesh-map" class="nav-link hide-mobile">Interactive Map</a>
           </nav>
 
           <!-- Center Brand Wordmark -->
-          <a href="./index.html" class="brand-logo" title="Bengal Rice Archive Home">
+          <a href="./" class="brand-logo" title="Bengal Rice Archive Home">
             <span class="brand-crest">${Icons.brandCrest}</span>
             <span class="brand-text">
               <span class="brand-name">Bengal Rice Archive</span>
@@ -65,8 +65,8 @@ window.BengalArchive.Navbar = {
 
           <!-- Right Navigation -->
           <nav class="nav-group right" aria-label="Section links">
-            <a href="./index.html#catalogue" class="nav-link hide-mobile">Catalogue</a>
-            <a href="./index.html#grains" class="nav-link hide-mobile">Living Grains</a>
+            <a href="./#catalogue" class="nav-link hide-mobile">Catalogue</a>
+            <a href="./#grains" class="nav-link hide-mobile">Living Grains</a>
             <a href="./dish.html?id=1" class="button neon" style="min-height: 40px; padding: 0.5rem 1.15rem;">
               <span>Dish Display</span>
               ${Icons.arrowRight}
@@ -83,7 +83,7 @@ window.BengalArchive.Navbar = {
               <div class="h5" style="color: var(--accent-neon);">Complete Monograph Index (28 Dishes)</div>
               <div class="h3" style="margin-top: 6px;">Select Any Dish to Open Full Monograph</div>
             </div>
-            <a href="./index.html#catalogue" class="button yellow" onclick="window.BengalArchive.Navbar.closeAll()">
+            <a href="./#catalogue" class="button yellow" onclick="window.BengalArchive.Navbar.closeAll()">
               <span>View Interactive Flip Grid</span>
               ${Icons.arrowRight}
             </a>
@@ -102,7 +102,7 @@ window.BengalArchive.Navbar = {
               <div class="h5" style="color: var(--accent-neon);">Eight Culinary Landscapes</div>
               <div class="h3" style="margin-top: 6px;">Regional Terroirs of Bangladesh</div>
             </div>
-            <a href="./index.html#bangladesh-map" class="button outline-light" onclick="window.BengalArchive.Navbar.closeAll()">
+            <a href="./#bangladesh-map" class="button outline-light" onclick="window.BengalArchive.Navbar.closeAll()">
               <span>Open Interactive Bangladesh Map</span>
               ${Icons.arrowRight}
             </a>

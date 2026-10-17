@@ -82,9 +82,9 @@ window.BengalArchive.DishDetail = {
           <!-- Right Column: Spacious Eat Xenia Title & Narrative -->
           <div class="single-dish-right">
             <nav class="monograph-breadcrumb" aria-label="Breadcrumb">
-              <a href="./index.html">Archive</a>
+              <a href="./">Archive</a>
               <span>/</span>
-              <a href="./index.html?region=${encodeURIComponent(dish.region)}#bangladesh-map">${dish.region} Terroir</a>
+              <a href="./?region=${encodeURIComponent(dish.region)}#bangladesh-map">${dish.region} Terroir</a>
               <span>/</span>
               <span style="color: var(--text-primary);">${dish.title}</span>
             </nav>
@@ -252,7 +252,7 @@ window.BengalArchive.DishDetail = {
             </a>
           </div>
           <div style="text-align: center;">
-            <a href="./index.html#catalogue" class="button neon">
+            <a href="./#catalogue" class="button neon">
               <span>View All ${dishes.length} Dishes</span>
             </a>
           </div>
