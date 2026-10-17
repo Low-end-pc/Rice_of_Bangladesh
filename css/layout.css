@@ -53,6 +53,14 @@
   position: relative;
 }
 
+.drawer-text-desktop {
+  display: inline;
+}
+
+.drawer-text-mobile {
+  display: none;
+}
+
 .nav-link::after,
 .nav-drawer-trigger::after {
   content: '';
@@ -644,6 +652,67 @@
 }
 
 @media (max-width: 1024px) {
+  :root {
+    --header-height: 68px;
+  }
+
+  .site-header {
+    height: var(--header-height);
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    padding-inline: var(--space-4);
+    width: 100%;
+  }
+
+  /* Keep Brand Logo on the left */
+  .brand-logo {
+    order: 1;
+    flex-shrink: 0;
+  }
+
+  .brand-crest {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-crest svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .brand-sub {
+    font-size: 0.6rem;
+  }
+
+  /* Place Drawer triggers cleanly on the right */
+  .nav-group.left {
+    order: 2;
+    gap: var(--space-3);
+    margin-left: auto;
+  }
+
+  /* Hide Desktop links and right nav group on tablet and mobile */
+  .hide-mobile,
+  .nav-group.right {
+    display: none !important;
+  }
+
+  .nav-drawer-trigger {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    padding-block: 0.35rem;
+    white-space: nowrap;
+  }
+
   .hero-grid,
   .split-grid,
   .grains-layout {
@@ -683,9 +752,62 @@
   }
 }
 
-@media (max-width: 768px) {
-  .nav-group.right .hide-mobile {
+@media (max-width: 680px) {
+  :root {
+    --header-height: 62px;
+  }
+
+  /* Switch trigger labels to compact mobile versions */
+  .drawer-text-desktop {
+    display: none !important;
+  }
+
+  .drawer-text-mobile {
+    display: inline !important;
+  }
+
+  /* Hide secondary subtitle on phone screens to prevent vertical crowding */
+  .brand-sub {
+    display: none !important;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .brand-crest {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-crest svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .nav-group.left {
+    gap: 6px;
+  }
+
+  .nav-drawer-trigger {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.6rem;
+    background-color: rgba(23, 61, 50, 0.06);
+    border: 1px solid rgba(23, 61, 50, 0.2);
+    border-radius: 999px;
+  }
+
+  .nav-drawer-trigger::after {
     display: none;
+  }
+
+  .nav-drawer-trigger .plus-icon {
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    margin-left: 2px;
   }
 
   .grain-row {
@@ -700,5 +822,30 @@
   .mega-dishes-grid,
   .mega-terroir-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-inner {
+    padding-inline: 8px;
+  }
+
+  .brand-name {
+    font-size: 0.86rem;
+  }
+
+  .brand-crest {
+    width: 28px;
+    height: 28px;
+  }
+
+  .brand-crest svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .nav-drawer-trigger {
+    font-size: 0.62rem;
+    padding: 0.28rem 0.45rem;
   }
 }

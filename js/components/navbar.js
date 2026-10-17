@@ -44,11 +44,13 @@ window.BengalArchive.Navbar = {
           <!-- Left Expandable Drawer Triggers -->
           <nav class="nav-group left" aria-label="Archive drawers">
             <button type="button" class="nav-drawer-trigger" data-drawer="dishes" aria-expanded="false">
-              <span>All 28 Dishes</span>
+              <span class="drawer-text-desktop">All 28 Dishes</span>
+              <span class="drawer-text-mobile">Dishes</span>
               <span class="plus-icon">+</span>
             </button>
             <button type="button" class="nav-drawer-trigger" data-drawer="terroirs" aria-expanded="false">
-              <span>8 Terroirs</span>
+              <span class="drawer-text-desktop">8 Terroirs</span>
+              <span class="drawer-text-mobile">Terroirs</span>
               <span class="plus-icon">+</span>
             </button>
             <a href="./#bangladesh-map" class="nav-link hide-mobile">Interactive Map</a>
